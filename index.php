@@ -40,13 +40,13 @@ else{
     <head>
 
         <!-- Title -->
-        <title>LEAVE MANAGEMENT | Home Page</title>
+        <title>ELMS | Home Page</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
         <meta name="description" content="Responsive Admin Dashboard Template" />
         <meta name="keywords" content="admin,dashboard" />
-        <meta name="author" content="abolikeshavtanusri" />
+        <meta name="author" content="Steelcoders" />
 
         <!-- Styles -->
         <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
@@ -119,7 +119,7 @@ else{
                             </a>
                         </section>
                         <div class="header-title col s3">
-                            <span class="chapter-title"> Employee Leave Management System</span>
+                            <span class="chapter-title">ELMS | Employee Leave Management System</span>
                         </div>
 
 
@@ -144,7 +144,7 @@ else{
 
                 </ul>
           <div class="footer">
-                  
+                    <p class="copyright"><a href="http://www.code-projects.org/">Code-Projects </a>©</p>
 
                 </div>
                 </div>
@@ -186,13 +186,12 @@ else{
         </div>
         <div class="left-sidebar-hover"></div>
 
-       
-
- <!-- Javascripts -->
- <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <!-- Javascripts -->
+        <script src="assets/plugins/jquery/jquery-2.2.0.min.js"></script>
         <script src="assets/plugins/materialize/js/materialize.min.js"></script>
         <script src="assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="assets/js/alpha.min.js"></script>
+
     </body>
 </html>
