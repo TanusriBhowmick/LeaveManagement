@@ -190,13 +190,26 @@ foreach($results as $resultt)
 <label for="city">City/Town</label>
 <input id="city" name="city" type="text"  value="<?php echo htmlentities($result->City);?>" autocomplete="off" required>
  </div>
-   
+
+<div class="input-field col m6 s12">
+<label for="medleaves">Medical Leaves</label>
+<input id="medleaves" name="medleaves" type="number"  value="<?php echo htmlentities($result->medleaves);?>" autocomplete="off" >
+</div>  
+
 <div class="input-field col m6 s12">
 <label for="country">Country</label>
 <input id="country" name="country" type="text"  value="<?php echo htmlentities($result->Country);?>" autocomplete="off" required>
 </div>
 
-                                                            
+<div class="input-field col m6 s12">
+<label for="casleaves">Casual Leaves</label>
+<input id="casleaves" name="casleaves" type="number"  value="<?php echo htmlentities($result->casualLeaves);?>" autocomplete="off" >
+</div>
+
+<div class="input-field col m6 s12">
+<label for="resLeaves">Restricted Leaves</label>
+<input id="resLeaves" name="resLeaves" type="number"  value="<?php echo htmlentities($result->resLeaves);?>" autocomplete="off">
+</div>                                                               
 
 <?php }}?>
                                                         
