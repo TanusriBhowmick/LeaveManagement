@@ -194,6 +194,11 @@ error:function (){}
 <label for="confirm">Confirm password</label>
 <input id="confirm" name="confirmpassword" type="password" autocomplete="off" required>
 </div>
+
+<div class="input-field col s12">
+<label for="number">Casual Leaves</label>
+<input id="cl" name="cl" type="number" autocomplete="off" required>
+</div>
 </div>
 </div>
                                                     
@@ -252,6 +257,18 @@ foreach($results as $result)
 <label for="phone">Mobile number</label>
 <input id="phone" name="mobileno" type="tel" maxlength="10" autocomplete="off" required>
  </div>
+
+ <div class="input-field col s12">
+<label for="number">Medical Leaves</label>
+<input id="ml" name="ml" type="number" autocomplete="off" required>
+ </div>
+
+ <div class="input-field col s12">
+<label for="number">Restricted Leaves</label>
+<input id="rl" name="rl" type="number" autocomplete="off" required>
+ </div>
+
+ 
 
                                                         
 <div class="input-field col s12">
