@@ -9,7 +9,6 @@ header('location:index.php');
 else{
 
 
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,12 +71,11 @@ else{
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th width="200">Employe Name</th>
-                                            <th width="120">Leave Type</th>
-
-                                             <th width="180">Posting Date</th>                 
+                                            <th>Employe Name</th>
+                                            <th>Leave Type</th>
+                                            <th>Posting Date</th>                 
                                             <th>Status</th>
-                                            <th align="center">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                  

@@ -99,8 +99,8 @@ header('location:manageemployee.php');
                                             <th>Emp Id</th>
                                             <th>Full Name</th>
                                             <th>Department</th>
-                                             <th>Status</th>
-                                             <th>Reg Date</th>
+                                            <th>Status</th>
+                                            <th>Reg Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
