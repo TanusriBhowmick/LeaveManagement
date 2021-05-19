@@ -1,30 +1,3 @@
-<?php
-session_start();
-include('includes/config.php');
-if(isset($_POST['signin']))
-{
-$uname=$_POST['username'];
-$password=md5($_POST['password']);
-$sql ="SELECT UserName,Password FROM admin WHERE UserName=:uname and Password=:password";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
-$query-> execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'changepassword.php'; </script>";
-} else{
-  
-  echo "<script>alert('Invalid Details');</script>";
-
-}
-
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,6 +17,7 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
         <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">        
         <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body class="signin-page">
 
@@ -59,7 +33,7 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
                                   <div class="card-content ">
                                       <span class="card-title">Sign In</span>
                                        <div class="row">
-                                           <form class="col s12" name="signin" method="post">
+                                           <form class="col s12" action="login.php" method="POST" >
                                                <div class="input-field col s12">
                                                    <input id="username" type="text" name="username" class="validate" autocomplete="off" required >
                                                    <label for="email">Username</label>
@@ -88,6 +62,26 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
         <script src="../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
         <script src="../assets/js/alpha.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+            $("form").submit(function (event) {
+                var formData = {
+                username: $("#username").val(),
+                password: $("#password").val()
+                };
+                console.log("in function");
+                $.ajax({
+                type: "POST",
+                url: "login.php",
+                data: formData,
+                dataType: "json",
+                }).done(function (data) {
+                console.log(data);
+                });
+            });
+            });
+        </script>
         
     </body>
 </html>
