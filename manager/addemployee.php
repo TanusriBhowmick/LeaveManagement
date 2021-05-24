@@ -20,7 +20,7 @@ $department=$_POST['department'];
 $address=$_POST['address']; 
 $city=$_POST['city']; 
 $country=$_POST['country']; 
-$mobileno=$_POST['mobileno'];
+$mobileno=$_POST['mobileno']; 
 $managerid=$_POST['managerid']; 
 $status=1;
 
@@ -60,7 +60,7 @@ $error="Something went wrong. Please try again";
     <head>
         
         <!-- Title -->
-        <title>Admin | Add Employee</title>
+        <title>Manager | Add Employee</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">

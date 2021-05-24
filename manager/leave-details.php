@@ -45,7 +45,7 @@ $msg="Leave updated Successfully";
     <head>
         
         <!-- Title -->
-        <title>Admin | Leave Details </title>
+        <title>Manager | Leave Details </title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -144,7 +144,7 @@ foreach($results as $result)
                                         </tr>
 
 <tr>
-                                             <td style="font-size:16px;"><b>Employee Leave Description : </b></td>
+                                             <td style="font-size:16px;"><b>Employe Leave Description : </b></td>
                                             <td colspan="5"><?php echo htmlentities($result->Description);?></td>
                                           
                                         </tr>
@@ -153,15 +153,15 @@ foreach($results as $result)
 <td style="font-size:16px;"><b>Leave Status :</b></td>
 <td colspan="5"><?php $stats=$result->Status;
 if($stats==1){?>
-    <span style="color: green">Admin Approved. Awaiting Manager Approval.</span>
-     <?php } if($stats==2)  { ?>
-    <span style="color: red">Not Approved.</span>
-    <?php } if($stats==0)  { ?>
-     <span style="color: blue">Waiting For Admin Approval.</span>
-     <?php } if($stats==3)  { ?>
-     <span style="color: orange">Manager Approved.</span>
-     <?php 
-    } ?>
+<span style="color: green">Admin Approved. Awaiting Manager Approval.</span>
+ <?php } if($stats==2)  { ?>
+<span style="color: red">Not Approved.</span>
+<?php } if($stats==0)  { ?>
+ <span style="color: blue">Waiting For Admin Approval.</span>
+ <?php } if($stats==3)  { ?>
+ <span style="color: orange">Manager Approved.</span>
+ <?php 
+} ?>
 </td>
 </tr>
 
@@ -202,7 +202,7 @@ if($stats==0)
         <h4>Leave take action</h4>
           <select class="browser-default" name="status" required="">
                                             <option value="">Choose your option</option>
-                                            <option value="1">Approved</option>
+                                            <option value="3">Approved</option>
                                             <option value="2">Not Approved</option>
                                         </select></p>
                                         <p><textarea id="textarea1" name="description" class="materialize-textarea" name="description" placeholder="Description" length="500" maxlength="500" required></textarea></p>
