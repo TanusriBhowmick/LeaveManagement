@@ -142,6 +142,8 @@ else{
 
                     <li class="no-padding"><a class="waves-effect waves-grey" href="admin/"><i class="material-icons">account_box</i>Admin Login</a></li>
                     <li class="no-padding"><a class="waves-effect waves-grey" href="manager/"><i class="material-icons">account_box</i>Manager Login</a></li>
+                    <li class="no-padding"><a class="waves-effect waves-grey" href="http://localhost:8080/servlet/index.html"><i class="material-icons">account_box</i>Feedback</a></li>
+                    
                 </ul>
           <div class="footer">
                   
