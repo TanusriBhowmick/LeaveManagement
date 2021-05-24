@@ -166,7 +166,7 @@ if($stats==1){?>
 </tr>
 
 <tr>
-<td style="font-size:16px;"><b>Admin Remark: </b></td>
+<td style="font-size:16px;"><b>Manager Remark: </b></td>
 <td colspan="5"><?php
 if($result->AdminRemark==""){
   echo "waiting for Approval";  
@@ -178,7 +178,7 @@ echo htmlentities($result->AdminRemark);
  </tr>
 
  <tr>
-<td style="font-size:16px;"><b>Admin Action taken date : </b></td>
+<td style="font-size:16px;"><b>Manager Action taken date : </b></td>
 <td colspan="5"><?php
 if($result->AdminRemarkDate==""){
   echo "NA";  

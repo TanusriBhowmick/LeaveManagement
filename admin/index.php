@@ -1,30 +1,3 @@
-<?php
-session_start();
-include('includes/config.php');
-if(isset($_POST['signin']))
-{
-$uname=$_POST['username'];
-$password=md5($_POST['password']);
-$sql ="SELECT UserName,Password FROM admin WHERE UserName=:uname and Password=:password";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
-$query-> execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'changepassword.php'; </script>";
-} else{
-  
-  echo "<script>alert('Invalid Details');</script>";
-
-}
-
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +9,7 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
         <meta charset="UTF-8">
         <meta name="description" content="Responsive Admin Dashboard Template" />
         <meta name="keywords" content="admin,dashboard" />
-        <meta name="author" content="tanusriabolikeshav" />
+        <meta name="author" content="Steelcoders" />
         
         <!-- Styles -->
         <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
@@ -46,20 +19,17 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
         <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="signin-page">
-
         <div class="mn-content valign-wrapper">
-
             <main class="mn-inner container">
   <h4 align="center"><a href="../index.php">Employee Leave Management System | Admin Login</a></h4>
                 <div class="valign">
                       <div class="row">
-
                           <div class="col s12 m6 l4 offset-l4 offset-m3">
                               <div class="card white darken-1">
                                   <div class="card-content ">
                                       <span class="card-title">Sign In</span>
                                        <div class="row">
-                                           <form class="col s12" name="signin" method="post">
+                                           <form class="col s12" action="login.php" method="POST" >
                                                <div class="input-field col s12">
                                                    <input id="username" type="text" name="username" class="validate" autocomplete="off" required >
                                                    <label for="email">Username</label>
@@ -82,14 +52,31 @@ echo "<script type='text/javascript'> document.location = 'changepassword.php'; 
             </main>
         </div>
         
-      <!-- Javascripts -->
-      <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <!-- Javascripts -->
+        <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
         <script src="../assets/plugins/materialize/js/materialize.min.js"></script>
         <script src="../assets/plugins/material-preloader/js/materialPreloader.min.js"></script>
         <script src="../assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-        <script src="../assets/js/alpha.min.js"></script>	
-
-
+        <script src="../assets/js/alpha.min.js"></script>
+        <script>
+            $(document).ready(function () {
+            $("form").submit(function (event) {
+                var formData = {
+                username: $("#username").val(),
+                password: $("#password").val()
+                };
+                console.log("in function");
+                $.ajax({
+                type: "POST",
+                url: "login.php",
+                data: formData,
+                dataType: "json",
+                }).done(function (data) {
+                console.log(data);
+                });
+            });
+            });
+        </script>
         
     </body>
 </html>
