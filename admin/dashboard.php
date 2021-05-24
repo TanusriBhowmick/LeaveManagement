@@ -136,15 +136,16 @@ foreach($results as $result)
                                             <td><?php echo htmlentities($result->LeaveType);?></td>
                                             <td><?php echo htmlentities($result->PostingDate);?></td>
                                                                        <td><?php $stats=$result->Status;
-if($stats==1){
-                                             ?>
-                                                 <span style="color: green">Approved</span>
-                                                 <?php } if($stats==2)  { ?>
-                                                <span style="color: red">Not Approved</span>
-                                                 <?php } if($stats==0)  { ?>
- <span style="color: blue">waiting for approval</span>
- <?php } ?>
-
+if($stats==1){?>
+<span style="color: green">Admin Approved. Awaiting Manager Approval.</span>
+ <?php } if($stats==2)  { ?>
+<span style="color: red">Not Approved.</span>
+<?php } if($stats==0)  { ?>
+ <span style="color: blue">Waiting For Admin Approval.</span>
+ <?php } if($stats==3)  { ?>
+ <span style="color: orange">Manager Approved.</span>
+ <?php 
+} ?>
 
                                              </td>
 
